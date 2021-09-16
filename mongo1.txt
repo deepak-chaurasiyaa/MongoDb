@@ -1,0 +1,310 @@
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use assignment
+switched to db assignment
+> db.createCollection('user')
+{ "ok" : 1 }
+> db.user.insert({
+...   first_name: "Deepak",
+...   last_name: "Chaurasiya",
+...   age: 21,
+...   ip_address: "127.0.0.1",
+...     gender: "male",
+...   email:"Abc123@gmail.com"
+... });
+WriteResult({ "nInserted" : 1 })
+>  db.user.insert({
+...   first_name: "Dilip",
+...   last_name: "Kumar",
+...   age: 21,
+...   ip_address: "127.0.0.1",
+...     gender: "male",
+...   email:"dilip123@gmail.com"
+... });
+WriteResult({ "nInserted" : 1 })
+> db.user.insert({
+...   first_name: "Amol",
+...   last_name: "Barkle",
+...   age: 21,
+...   ip_address: "127.0.0.1",
+...     gender: "male",
+...   email:"Amol123@gmail.com"
+... });
+WriteResult({ "nInserted" : 1 })
+>  db.user.insert({
+...   first_name: "Abahay",
+...   last_name: "Gedam",
+...   age: 21,
+...   ip_address: "127.0.0.1",
+...     gender: "male",
+...   email:"abhay123@gmail.com"
+... });
+WriteResult({ "nInserted" : 1 })
+> show collections
+user
+> db.user.insertMany([
+...         {
+...     first_name: "Vandana",
+...     last_name: "Chaurasiya",
+...     age: 16,
+...     ip_address: "127.0.0.1",
+...     gender: "female",
+...     email:"vandana123@gmail.com"
+...     },
+...     {
+...     first_name: "Tejaswani",
+...     last_name: "kumari",
+...     age: 17,
+...     ip_address: "127.0.0.1",
+...     gender: "female",
+...     email:"teju123@gmail.com"
+...     },
+...     {
+...     first_name: "Ankush",
+...     last_name: "chaurasiya",
+...     age: 12,
+...     ip_address: "127.0.0.1",
+...     gender: "male",
+...     email:"ankush123@gmail.com"
+...     },
+...         {
+...     first_name: "Ajay",
+...     last_name: "Dev",
+...     age: 125,
+...     ip_address: "127.0.0.1",
+...     gender: "male",
+...             email: "ajay123@gmail.com"
+...     },
+...      {
+...     first_name: "Bhawani",
+...     last_name: "shankar",
+...     age: 23,
+...     ip_address: "127.0.0.1",
+...     gender: "male",
+...     email:"hawani123@gmail.com"
+...     },
+...      {
+...     first_name: "Bhashkar",
+...     last_name: "rai",
+...     age: 17,
+...     ip_address: "127.0.0.1",
+...     gender: "male",
+...     email:"bhashkar123@gmail.com"
+...     },
+...      {
+...     first_name: "puja",
+...     last_name: "pal",
+...     age: 23,
+...     ip_address: "127.0.0.1",
+...     gender: "female",
+...     email:"puja123@gmail.com"
+...     },
+...
+...     ])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("61438839d66ac6d946857c3d"),
+                ObjectId("61438839d66ac6d946857c3e"),
+                ObjectId("61438839d66ac6d946857c3f"),
+                ObjectId("61438839d66ac6d946857c40"),
+                ObjectId("61438839d66ac6d946857c41"),
+                ObjectId("61438839d66ac6d946857c42"),
+                ObjectId("61438839d66ac6d946857c43")
+        ]
+}
+> db.user.find().pretty()
+{
+        "_id" : ObjectId("614383d1d66ac6d946857c39"),
+        "first_name" : "Deepak",
+        "last_name" : "Chaurasiya",
+        "age" : 21,
+        "ip_address" : "127.0.0.1",
+        "gender" : "male",
+        "email" : "Abc123@gmail.com"
+}
+{
+        "_id" : ObjectId("6143854bd66ac6d946857c3a"),
+        "first_name" : "Dilip",
+        "last_name" : "Kumar",
+        "age" : 21,
+        "ip_address" : "127.0.0.1",
+        "gender" : "male",
+        "email" : "dilip123@gmail.com"
+}
+{
+        "_id" : ObjectId("61438570d66ac6d946857c3b"),
+        "first_name" : "Amol",
+        "last_name" : "Barkle",
+        "age" : 21,
+        "ip_address" : "127.0.0.1",
+        "gender" : "male",
+        "email" : "Amol123@gmail.com"
+}
+{
+        "_id" : ObjectId("614385a3d66ac6d946857c3c"),
+        "first_name" : "Abahay",
+        "last_name" : "Gedam",
+        "age" : 21,
+        "ip_address" : "127.0.0.1",
+        "gender" : "male",
+        "email" : "abhay123@gmail.com"
+}
+{
+        "_id" : ObjectId("61438839d66ac6d946857c3d"),
+        "first_name" : "Vandana",
+        "last_name" : "Chaurasiya",
+        "age" : 16,
+        "ip_address" : "127.0.0.1",
+        "gender" : "female",
+        "email" : "vandana123@gmail.com"
+}
+{
+        "_id" : ObjectId("61438839d66ac6d946857c3e"),
+        "first_name" : "Tejaswani",
+        "last_name" : "kumari",
+        "age" : 17,
+        "ip_address" : "127.0.0.1",
+        "gender" : "female",
+        "email" : "teju123@gmail.com"
+}
+{
+        "_id" : ObjectId("61438839d66ac6d946857c3f"),
+        "first_name" : "Ankush",
+        "last_name" : "chaurasiya",
+        "age" : 12,
+        "ip_address" : "127.0.0.1",
+        "gender" : "male",
+        "email" : "ankush123@gmail.com"
+}
+{
+        "_id" : ObjectId("61438839d66ac6d946857c40"),
+        "first_name" : "Ajay",
+        "last_name" : "Dev",
+        "age" : 125,
+        "ip_address" : "127.0.0.1",
+        "gender" : "male",
+        "email" : "ajay123@gmail.com"
+}
+{
+        "_id" : ObjectId("61438839d66ac6d946857c41"),
+        "first_name" : "Bhawani",
+        "last_name" : "shankar",
+        "age" : 23,
+        "ip_address" : "127.0.0.1",
+        "gender" : "male",
+        "email" : "hawani123@gmail.com"
+}
+{
+        "_id" : ObjectId("61438839d66ac6d946857c42"),
+        "first_name" : "Bhashkar",
+        "last_name" : "rai",
+        "age" : 17,
+        "ip_address" : "127.0.0.1",
+        "gender" : "male",
+        "email" : "bhashkar123@gmail.com"
+}
+{
+        "_id" : ObjectId("61438839d66ac6d946857c43"),
+        "first_name" : "puja",
+        "last_name" : "pal",
+        "age" : 23,
+        "ip_address" : "127.0.0.1",
+        "gender" : "female",
+        "email" : "puja123@gmail.com"
+}
+> db.user.findOne({age:21})
+{
+        "_id" : ObjectId("614383d1d66ac6d946857c39"),
+        "first_name" : "Deepak",
+        "last_name" : "Chaurasiya",
+        "age" : 21,
+        "ip_address" : "127.0.0.1",
+        "gender" : "male",
+        "email" : "Abc123@gmail.com"
+}
+> db.user.update({age:21},{first_name:"Vijay"},{upsert:true})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.user.findOne({age:21})
+{
+        "_id" : ObjectId("6143854bd66ac6d946857c3a"),
+        "first_name" : "Dilip",
+        "last_name" : "Kumar",
+        "age" : 21,
+        "ip_address" : "127.0.0.1",
+        "gender" : "male",
+        "email" : "dilip123@gmail.com"
+}
+> db.comments.update({name: 'Shubham'},
+... {'name': 'Harry',
+...     'lang': 'JavaScript',
+...     'member_since': 51
+... db.user.insert({   first_name: "Deepak",   last_name: "Chaurasiya",   age: 21,   ip_address: "127.0.0.1",     gender: "male",   email:"Abc123@gmail.com" });
+... db.user.findOne({age:21})
+... ^C
+
+>
+> db.user.findOne({age:21})
+{
+        "_id" : ObjectId("6143854bd66ac6d946857c3a"),
+        "first_name" : "Dilip",
+        "last_name" : "Kumar",
+        "age" : 21,
+        "ip_address" : "127.0.0.1",
+        "gender" : "male",
+        "email" : "dilip123@gmail.com"
+}
+> db.user.update({first_name:"Dilip"},{first_name:"Vijay"},{upsert:true})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.user.find({first_name:"Dilip"})
+> db.user.find({first_name:"Vijay"})
+{ "_id" : ObjectId("614383d1d66ac6d946857c39"), "first_name" : "Vijay" }
+{ "_id" : ObjectId("6143854bd66ac6d946857c3a"), "first_name" : "Vijay" }
+> db.user.updateMany({first_name:"Vijay"})
+uncaught exception: TypeError: can't convert undefined to object :
+DBCollection.prototype.updateMany@src/mongo/shell/crud_api.js:648:20
+@(shell):1:1
+> db.user.updateMany({first_name:"Vijay"},{$set:{first_name:"kumar"}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.user.updateMany({first_name:"Vijay"})
+uncaught exception: TypeError: can't convert undefined to object :
+DBCollection.prototype.updateMany@src/mongo/shell/crud_api.js:648:20
+@(shell):1:1
+> db.user.find({first_name:"Vijay"})
+> db.user.find({first_name:"kumar"})
+{ "_id" : ObjectId("614383d1d66ac6d946857c39"), "first_name" : "kumar" }
+{ "_id" : ObjectId("6143854bd66ac6d946857c3a"), "first_name" : "kumar" }
+> db.user.remove({first_name:"kumar"})
+WriteResult({ "nRemoved" : 2 })
+> db.user.findOneAndDelete({first_name:"Abhay"})
+null
+> db.user.findOneAndDelete({first_name:"Deepak"})
+null
+> db.user.findOneAndDelete({first_name:"puja"})
+{
+        "_id" : ObjectId("61438839d66ac6d946857c43"),
+        "first_name" : "puja",
+        "last_name" : "pal",
+        "age" : 23,
+        "ip_address" : "127.0.0.1",
+        "gender" : "female",
+        "email" : "puja123@gmail.com"
+}
+> db.user.find({first_name:"puja"})
+> db.user.find({first_name:"puja"})
+> show dbs
+admin       0.000GB
+assignment  0.000GB
+config      0.000GB
+local       0.000GB
+> show collections
+user
+> db.dropDatabase()
+{ "ok" : 1 }
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+>
